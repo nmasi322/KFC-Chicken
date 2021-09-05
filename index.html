@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>KFC Fried Chicken</title>
+</head>
+<body>
+    <section class="main">
+        <header>
+            <a href="#"><img src="logo.png" class="logo" alt=""></a>
+            <div class="toggle"></div>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header> 
+        <div class="content">
+            <div class="text">
+                <h2>It's Finger<br>Lickin <span>Good.</span></h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Itaque vero debitis odit dignissimos ullam quasi numquam 
+                    inventore sunt sint molestias molestiae delectus doloribus, 
+                    vel saepe vitae quaerat perspiciatis animi dolorum. Lorem 
+                    ipsum dolor, sit amet consectetur adipisicing elit. Inventore, 
+                    nobis maiores! </p>
+                <a href="" class="btn">Order Now</a>
+            </div>
+            <div class="slider">
+                <div class="slides">
+                    <img src="burger_fries.png" alt="">
+                </div>
+                <div class="slides">
+                    <img src="pic.png" alt="">
+                </div>
+                <div class="slides">
+                    <img src="fried_chicken.png" alt="">
+                </div>
+                <div class="slides active">
+                    <img src="burger.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="sci">
+                <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            </ul>
+            <div class="prevNext">
+                <p>Always Fresh!</p>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        const menutoggle = document.querySelector(".toggle");
+        const navigation = document.querySelector(".navigation");
+        menutoggle.onclick = function(){
+            menutoggle.classList.toggle("active")
+            navigation.classList.toggle("active")
+        }
+
+        // slider
+        const slides = document.querySelectorAll('.slides');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        i = 0;
+
+        function ActiveSlide(n){
+            for(slide of slides)
+            slide.classList.remove('active');
+            slides[n].classList.add('active');
+        }
+
+        // function for prev btn 
+        prev.addEventListener("click", (e) => {
+            if (i == slides.length - 1){
+                i = 0;
+                ActiveSlide(i);
+            }
+            else{
+                i++;
+                ActiveSlide(i);
+            }
+        })
+    </script>
+</body>
+</html>
